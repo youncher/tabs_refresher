@@ -1,13 +1,13 @@
 {
-	"name": "TODO",
+	"name": "Tabs Refresher",
 	"version": "1.0",
 	"description": "TODO",
-	"permissions": ["activeTab", "declarativeContent", "storage"],
+	"permissions": ["activeTab"],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
 	},
-	"page_action": {
+	"browser_action": {
 		"default_popup": "popup.html",
 		"default_icon": {
 			"16": "images/get_started16.png",
