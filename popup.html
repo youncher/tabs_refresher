@@ -3,16 +3,90 @@
 <html>
 <head>
 	<style>
+		body {
+			min-width: 380px;
+			min-height: 270px;
+			position: relative;
+			vertical-align:middle;
+		}
+		.wrapper {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			padding: 0px 20px;
+		}
+
+		.box4 {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+
+		.box6 {
+			grid-column-start: 1;
+			grid-column-end: 4;
+		}
+
+		.box {
+			margin: 12px 15px;
+			min-width: 83px;
+			min-height: 30px;
+		}
+		* {box-sizing: border-box;}
+
 		button {
-			height: 40px;
-			widgth: 40px;
-			outline: none;
+			font-size: 16px;
+		}
+
+		input {
+			text-align: center;
+			font-size: 16px;
+		}
+
+		.instructions {
+			font-size: 14px;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			min-height: 0px;
+			margin: 0px 15px;
+		}
+
+		input[type="number"]::placeholder {
+			font-size: 16px;
+		}
+
+		#startStop {
+			background-color: #58EF79;
+		}
+
+		#clear {
+			background-color: #84D1FD;
+		}
+
+		#refreshNow {
+			background-color: #FFC700;
 		}
 	</style>
 </head>
 
 <body>
-	<button id="refreshtab">Refresh!</button>
+	<h1>Tabs Refresher</h1>
+	<hr />
+	<form>
+		<div class="wrapper">
+			<p class="box instructions">Set timer for current tab:</p>
+
+			<input class="box box1" type="tel" name="hours" maxlength="2" step="1" placeholder="0 hrs">
+			<input class="box box2" type="text" name="minutes" maxlength="2" min="0" max="60" placeholder="0 mins">
+			<input class="box box3" type="text" name="hours" maxlength="2" min="0" max="60" placeholder="0 secs">
+
+			<button class="box box4" id="startStop">Start</button>
+			<button class="box box5" id="clear">Clear</button>
+
+			<button class="box box6" id="refreshNow">Refresh Now!</button>
+
+			<span class="box instructions">Current Setting: Refresh <span>___</span> every <span>___</span></span>
+		</div>
+	</form>
+
 	<script src="popup.js"></script>
 </body>
 

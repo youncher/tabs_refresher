@@ -1,6 +1,6 @@
-let refreshtab = document.getElementById('refreshtab');
+let refreshNow = document.getElementById('refreshNow');
 
-refreshtab.onclick = (element) => {
+refreshNow.onclick = (element) => {
 	let color = element.target.value;
 	chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 		var code = 'window.location.reload();';
