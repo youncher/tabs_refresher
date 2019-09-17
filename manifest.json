@@ -2,7 +2,7 @@
 	"name": "Tabs Refresher",
 	"version": "1.0",
 	"description": "TODO",
-	"permissions": ["activeTab"],
+	"permissions": ["activeTab", "storage"],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false

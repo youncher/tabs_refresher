@@ -15,12 +15,12 @@
 			padding: 0px 20px;
 		}
 
-		.box4 {
+		.boxStart {
 			grid-column-start: 1;
 			grid-column-end: 3;
 		}
 
-		.box6 {
+		.boxRefreshNow {
 			grid-column-start: 1;
 			grid-column-end: 4;
 		}
@@ -74,13 +74,13 @@
 		<div class="wrapper">
 			<p class="box instructions">Set timer for current tab:</p>
 
-			<input class="box box1" type="text" id="hours"  maxlength="2" placeholder="0 hrs">
-			<input class="box box2" type="text" id="minutes" maxlength="2" placeholder="0 mins">
-			<input class="box box3" type="text" id="seconds" maxlength="2" placeholder="0 secs">
+			<input class="box" type="text" id="txtHours" maxlength="2" placeholder="0 hrs">
+			<input class="box" type="text" id="txtMinutes" maxlength="2" placeholder="0 mins">
+			<input class="box" type="text" id="txtSeconds" maxlength="2" placeholder="0 secs">
 
-			<button class="box box4" id="startStop">Start</button>
-			<button class="box box5" id="clear">Clear</button>
-			<button class="box box6" id="refreshNow">Refresh Now!</button>
+			<button type="button" class="box boxStart" id="startStop">Start</button>
+			<button class="box" id="clear">Clear</button>
+			<button class="box boxRefreshNow" id="refreshNow">Refresh Now!</button>
 
 			<span class="box instructions">Current Setting: Refresh <span>___</span> every <span>___</span></span>
 		</div>
