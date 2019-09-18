@@ -16,9 +16,9 @@ chrome.storage.local.set(
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-	updateGlobalTime('Hours');
-	updateGlobalTime('Minutes');
-	updateGlobalTime('Seconds');
+	updateGlobalTime('Hours')
+		.then(updateGlobalTime('Minutes'))
+		.then(updateGlobalTime('Seconds'));
 });
 
 document.getElementById('Hours').addEventListener('focus', (event) => {
@@ -64,10 +64,10 @@ function checkInput(event) {
 
 function getInputAndStoreTime(element, timeToCheck) {
 	let transformedTime = !isNaN(parseInt(timeToCheck)) ? parseInt(timeToCheck) : 0;
-	setTime(element, transformedTime);
+	setStorageTime(element, transformedTime);
 }
 
-function setTime(element, transformedTime) {
+function setStorageTime(element, transformedTime) {
 	chrome.storage.local.set({
 		[element.id]: transformedTime
 	}, () => {
@@ -77,15 +77,21 @@ function setTime(element, transformedTime) {
 }
 
 function updateGlobalTime(elementId) {
-	chrome.storage.local.get([elementId], function(result) {
-		if (elementId === 'Hours') {
-			globalHours = result.Hours;
-		} else if (elementId === 'Minutes') {
-			globalMinutes = result.Minutes;
-		} else { // elementId === 'Seconds'
-			globalSeconds = result.Seconds;
-		}
-		displayStoredTime(elementId);
+	return new Promise( (resolve, reject) => {
+		chrome.storage.local.get([elementId], function(result) {
+			if (elementId === 'Hours') {
+				globalHours = result.Hours;
+				tempHours = globalHours;
+			} else if (elementId === 'Minutes') {
+				globalMinutes = result.Minutes;
+				tempMinutes = globalMinutes;
+			} else { // elementId === 'Seconds'
+				globalSeconds = result.Seconds;
+				tempSeconds = globalSeconds;
+			}
+			displayStoredTime(elementId);
+			resolve('Success');
+		});
 	});
 }
 
