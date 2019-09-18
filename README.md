@@ -8,9 +8,10 @@ By: **Cherie Young**
 * [x] Enable extension on all tabs.
 * [x] Add main UI for extension popup.
 * [x] Implement default behavior for Refresh Now button.
-* [ ] Add input to accept setting timer.
-* [ ] Add validation for user input.
-* [ ] Save state (user settings) for user's current session.
+* [x] Add input to accept setting timer.
+* [x] Add validation for user input.
+* [x] Save state (hour, minutes, seconds) for user's current session.
+* [ ] Save state (hour, minutes, seconds) at a per tab level.
 * [ ] Implement countdown and display countdown. When countdown reaches 0, refresh the tab, then restart countdown.
 * [ ] Clear timer.
 * [ ] Implement start/stop for the countdown timer.
