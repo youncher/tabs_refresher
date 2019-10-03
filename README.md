@@ -1,4 +1,4 @@
-### Tabs Refresher
+# Tabs Refresher
 Tabs Refresher is a Google is a Chrome extension that allows users to set a time interval to automate page refresh at each tab level.
 
 By: **Cherie Young**
